@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Reddit Deduplicator",
-  "version": "1.5",
-  "author": "Nicholas Gaya",
-  "description": "Hide duplicate posts on pre-redesign Reddit.",
-  "homepage_url": "https://nickgaya.github.io/rededup/",
+  "name": "Reddit Deduplicator (MV3/2026 Firefox+redd.it Fix)",
+  "version": "1.6",
+  "author": "nickgaya, brsidell, scarlion1",
+  "description": "Hide duplicate posts on pre-redesign Reddit, 2026 update supporting MV3, Firefox, and redd.it domain.",
+  "homepage_url": "https://github.com/scarlion1/rededup-mv3/tree/fix/mv3-firefox-compatibility",
 
   "icons": {
     "48": "icons/icon48.png",
@@ -45,7 +45,7 @@
   ],
   
   "action": {
-    "default_title": "Reddit Deduplicator",
+    "default_title": "Reddit Deduplicator (MV3/2026 Firefox+redd.it Fix)",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png"
