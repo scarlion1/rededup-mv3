@@ -1,3 +1,24 @@
+This fork is a modernized version of the Reddit Deduplicator extension.  It restores functionality for 2026 environments by addressing critical breakages in original forks regarding Reddit's media migration and Manifest V3 security sandboxing.
+
+## 🛠 What's Fixed in 2026?
+* **Modern Reddit Media:** Authorized `*.redd.it` and `preview.redd.it` domains to allow thumbnail hashing on new-style Reddit posts.
+* **Firefox Lifecycle Fix:** Resolved the `ReferenceError` in background scripts by optimizing script injection order in the manifest.
+* **Network & CORS:** Implemented anonymous, header-compliant `fetch` requests to bypass Reddit's CDN protection layers.
+* **Persistence:** Fully compliant with non-persistent MV3 Service Workers.
+
+## 🚀 Installation (Developer Mode)
+1. **Clone/Download** this repository.
+2. Open your browser's extension management page (`about:debugging` for Firefox or `chrome://extensions` for Chrome).
+3. **Load Temporary Add-On** (Firefox) or **Load Unpacked** (Chrome) and select the `manifest.json` or this folder.
+4. **⚠️ Firefox Critical Step:** You must go to the extension's **Permissions** tab and toggle **"Access your data for sites in the redd.it domain"** to ON.
+
+## 🤝 Credits
+Modernized for 2026 by **scarlion1**.  
+Based on the MV3 Port by **[brsidell](https://github.com/brsidell/rededup-mv3)** and the original work by **[nickgaya](https://github.com/nickgaya/rededup)**.
+
+---
+## Original Project Description
+
 # <img src="icons/icon.svg" height="32" /> Reddit Deduplicator
 
 [![Firefox: Get the add-on](images/ff_badge.png)](https://addons.mozilla.org/addon/rededup/)
