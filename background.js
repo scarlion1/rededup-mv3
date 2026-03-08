@@ -41,7 +41,10 @@ async function handleImageHashing(message, sender) {
   const url = new URL(message.url, sender.url);
 
   // For security, make sure the requested domain is valid
-  if (!url.hostname.endsWith('.thumbs.redditmedia.com')) {
+  // Allow both the old thumbnail domains and the new preview domains
+  const isValidDomain = url.hostname.endsWith('.thumbs.redditmedia.com') ||
+                        url.hostname.endsWith('.redd.it');
+  if (!isValidDomain) {
     throw new Error("Invalid domain: " + url.hostname);
   }
 

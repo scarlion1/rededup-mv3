@@ -17,7 +17,8 @@
 
   "host_permissions": [
     "*://*.reddit.com/*",
-    "*://*.thumbs.redditmedia.com/*"
+    "*://*.thumbs.redditmedia.com/*",
+    "*://*.redd.it/*"
   ],
 
   "options_ui": {
@@ -26,13 +27,20 @@
   },
 
   "background": {
-    "service_worker": "background.js"
+  "service_worker": "background.js",
+    "scripts": [
+      "dct.js",
+      "dwt.js",
+      "phash.js",
+      "background.js"
+    ]
   },
 
   "content_scripts": [
     {
       "matches": [
-        "*://*.reddit.com/*"
+        "*://*.reddit.com/*",
+        "*://*.redd.it/*"
       ],
       "js": [
         "dct.js",
@@ -49,6 +57,12 @@
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png"
+    }
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{68f0c654-5a3d-423b-b846-2b3ab68d05dd}"
     }
   }
 }

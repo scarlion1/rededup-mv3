@@ -30,7 +30,14 @@ const HashFunction = Object.freeze({
  * @returns {Promise<Image>} An image with data from the source URL.
  */
 async function fetchImage(srcUrl) {
-    const resp = await fetch(srcUrl);
+    // Adding credentials and referrer policy allows bypassing many CORS blocks
+    const resp = await fetch(srcUrl, {
+        credentials: 'omit',
+        referrerPolicy: 'no-referrer'
+    });
+
+    if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
+
     const blobUrl = URL.createObjectURL(await resp.blob());
     try {
         return await loadImage(blobUrl);
